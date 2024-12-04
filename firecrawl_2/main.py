@@ -1,12 +1,16 @@
-# Getting a bit fancier
-# Creating a function to do our crawl and specifying paramatwers
+# Getting a bit fancier - Using a function
+# Creating a function to do our crawl and specifying paramaters
 
+# We import warnings before anything else as this allows us to filter out
+# UserWarning: Field name 'schema' in "FirecrawlApp.ExtractParams" which
+# clashes with an attribute in parent "BaseModel" from pydantic.main
 import warnings
 
 # HOUSEKEEPING:Filter out UserWarning: Field name 'schema' in "FirecrawlApp.ExtractParams"
-# shadows an attribute in parent "BaseModel" from pydantic.main
+# which clashes with an attribute in parent "BaseModel" from pydantic.main
 warnings.filterwarnings("ignore", category=UserWarning)
 
+# The rest of our imports
 import os
 from firecrawl import FirecrawlApp
 from dotenv import load_dotenv
@@ -85,10 +89,10 @@ def main():
     # Did the crawl succeed?
     print("Crawl status:", crawl_result["status"])
 
-    # Get the data
+    # Get the keys from teh data
     print("Available keys in response: ", crawl_result.keys())
 
-    # how many pages did we get?
+    # How many pages did we get?
     print("Total pages crawled:", crawl_result["total"])
 
     # Display token usage information
@@ -103,11 +107,14 @@ def main():
     # We will look at that next
     if "data" in crawl_result:
         print("\nExtracted Content:")
+        # Iterate over the pages
         for page_number, page_data in enumerate(crawl_result["data"], 1):
             print(f"\nPage {page_number}:")
+            # Iterate over the keys and values
             for key, value in page_data.items():
                 print(f"  {key}: {value}")
     else:
+       # And if we didnt get any extracted content
         print("No extracted content found.")
 
 

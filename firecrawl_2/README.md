@@ -1,6 +1,6 @@
-# Test 2
+# Test 2 - Getting a bit fancier
 
-## Getting a bit fancier
+## Building on our previous example in Firecrawl_1
 1. Created a function to handle our crawl. 
 2. Specified parameters so we dont crawl too much. We will enhance this as we progeress
 3. Created meaningfull error message if we do not have enough credits to run our crawl
