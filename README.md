@@ -85,5 +85,19 @@ success id                                   url
    True 6404ceda-cd74-4c88-adb2-98c806d0b548 https://localhost:3002/v1/crawl/6404ceda-cd74-4c88-adb2-98c806d0b548
 ```
 
+# A bit about Firecrawls Scrape and Crawl functionality
+## What Is Firecrawl’s /scrape Endpoint? The Short Answer
+The /scrape endpoint is Firecrawl’s core web scraping API that enables automated extraction of content from any webpage. It handles common web scraping challenges like:
+
+    * JavaScript rendering - Executes JavaScript to capture dynamically loaded content
+    * Content extraction - Automatically identifies and extracts main content while filtering out noise
+    * Format conversion - Converts HTML to clean formats like Markdown or structured JSON
+    * Screenshot capture - Takes full or partial page screenshots during scraping
+    * Browser automation - Supports clicking, typing and other browser interactions
+    * Anti-bot bypass - Uses rotating proxies and browser fingerprinting to avoid blocks
+
+The endpoint accepts a URL and configuration parameters, then returns the scraped content in your desired format. It’s designed to be flexible enough for both simple static page scraping and complex dynamic site automation.
+
+
 If you have got to this point you have a functioning Docker install of Firecrawl.
 You can now try any of the examples in the firecrawl_x folders
