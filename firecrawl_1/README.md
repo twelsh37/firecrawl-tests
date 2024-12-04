@@ -1,5 +1,6 @@
-# First test
-Initial file to check Firecrawl functionality is working with our local installation.
+# First test - A Simple Confidence Check
+Initial file to check Firecrawl is working with our local installation. 
+A simple confidence check
 It queries books.toscrape.com  website and displays the crawl status.
 
 We set up paramaters so that we only crawl 1 page and we return the results in markdown only.
