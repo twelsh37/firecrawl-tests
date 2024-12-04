@@ -3,7 +3,7 @@
 ## Introduction
 This is a test of firecrawl using a local installation hosted in Docker
 The offical documentation is available at the [Firecrawl Site](https://docs.firecrawl.dev/introduction). 
-Here I wiill install a self-hodsted version of firecrawl and test it out on my local machine
+Here I wiill install a self-hosted version of firecrawl and test it out on my local machine
 
 ## Prerequisites
 In order to run these tests we need to setup a local installation of Firecrawl.
@@ -84,3 +84,6 @@ success id                                   url
 ------- --                                   ---
    True 6404ceda-cd74-4c88-adb2-98c806d0b548 https://localhost:3002/v1/crawl/6404ceda-cd74-4c88-adb2-98c806d0b548
 ```
+
+If you have got to this point you have a functioning Docker install of Firecrawl.
+You can now try any of the esamples in the firecrawl_x folders
