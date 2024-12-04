@@ -3,8 +3,8 @@
 
 import warnings
 
-# Filter out UserWarning: Field name 'schema' in "FirecrawlApp.ExtractParams" shadows an attribute in parent
-# "BaseModel" from pydantic.main
+# HOUSEKEEPING:Filter out UserWarning: Field name 'schema' in "FirecrawlApp.ExtractParams"
+# shadows an attribute in parent "BaseModel" from pydantic.main
 warnings.filterwarnings("ignore", category=UserWarning)
 
 import os
@@ -21,15 +21,44 @@ app = FirecrawlApp(
 )
 
 
+# Creating a function to do our crawl and specifying paramatwers
 def crawl_url(url, params=None):
+    """
+    Crawl a specified URL using Firecrawl with optional parameters.
+
+    Args:
+        url (str): The target URL to crawl.
+        params (dict, optional): Dictionary of crawling parameters. If None, uses default settings:
+            - limit: 5 pages
+            - scrapeOptions:
+                - formats: ["markdown", "html"]
+                - waitFor: 1000ms (wait time for page load)
+                - timeout: 10000ms (maximum time before timeout)
+
+    Returns:
+        dict: Crawl results from Firecrawl if successful
+        str: Error message if out of credits, including credit usage information if available
+
+    Raises:
+        requests.exceptions.HTTPError: For HTTP errors other than 402 (Payment Required)
+        Exception: For other unexpected errors during the crawl
+
+    Example:
+        >>> result = crawl_url("https://example.com")
+        >>> result = crawl_url("https://example.com",
+        ...                   params={"limit": 10,
+        ...                          "scrapeOptions": {"formats": ["markdown"]}})
+    """
     try:
         if params is None:
             params = {
-                "limit": 5,
+                # limit the number of pages to crawl
+                "limit": 2,
+                # Specify scrape options
                 "scrapeOptions": {
-                    "formats": ["markdown", "html"],
+                    "formats": ["markdown"],  # Return content as markdown only
                     "waitFor": 1000,  # wait for a second for pages to load
-                    "timeout": 10000,  # timeout after 10 seconds
+                    "timeout": 5000,  # timeout after 5 seconds
                 },
             }
         return app.crawl_url(url, params=params)
@@ -53,10 +82,9 @@ def main():
         print(crawl_result)
         return
 
-    # did the crawl succeed?
+    # Did the crawl succeed?
     print("Crawl status:", crawl_result["status"])
 
-    # If we got here, we have a successful crawl result
     # Get the data
     print("Available keys in response: ", crawl_result.keys())
 
@@ -69,9 +97,10 @@ def main():
         token_usage = crawl_result["creditsUsed"]
         print(f"Total tokens used: ", token_usage)
 
-    # Display the extracted content. This isnt pretty, just
-    # a bunch of text scrolling up the screen up the screen.
-    # We will make this prettier in another example.
+    # Display the extracted content.
+    # This is the markdown that is returned
+    # NOTE: This returns two pages of the same data. Why?
+    # We will look at that next
     if "data" in crawl_result:
         print("\nExtracted Content:")
         for page_number, page_data in enumerate(crawl_result["data"], 1):
