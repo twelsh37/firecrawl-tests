@@ -19,10 +19,16 @@ app = FirecrawlApp(
 # Crawl a website:
 crawl_status = app.crawl_url(
   'https://books.toscrape.com/ ', 
+  #Set up some parameters
   params={
-    'limit': 3, 
-    'scrapeOptions': {'formats': ['markdown', 'html']}
+    # limit the number of pages to crawl
+    'limit': 1, 
+    # specify the formats to scrape
+    'scrapeOptions': {'formats': ['markdown']}
   },
-  poll_interval=30
+  # Set the polling interval to 3 seconds for a quick run
+  poll_interval=3
 )
-print(crawl_status)
+
+# Output the crawl status
+print('Crawl status: ',crawl_status['status'])
