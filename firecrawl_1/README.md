@@ -1,4 +1,4 @@
-# First test - A Simple Confidence Check
+# Second test - A Simple Confidence Check of crawl_url
 In the previous example in firecrawl_0, we used scrape_url. This is a simple utility to pull a single URL.
 Form now on we will be using the much more configurable crawl_url
 lets carry out a quick confidence check to ensure firecrawl, and specificaly 'crawl_url', are functioning as expected.
