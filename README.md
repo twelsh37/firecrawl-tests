@@ -39,7 +39,7 @@ And of course for any Windows users using Linux under WSL2.
 ```bash
 curl -X POST http://localhost:3002/v1/crawl \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <YOUR_API_KEY>' \
+    -H 'Authorization: Bearer <YOUR_FIRECRAWL_API_KEY>' \
     -d '{
       "url": "https://docs.firecrawl.dev",
       "limit": 2,
@@ -65,7 +65,7 @@ Here is the same test performed with Powershell on Windows
 irm http://localhost:3002/v1/crawl `
      -Method Post `
      -Headers @{ 
-         'Authorization'='Bearer <YOUR_API_KEY>'
+         'Authorization'='Bearer <YOUR_FIRECRAWL_API_KEY>'
          'Content-Type'='application/json'
      } `
      -Body (@{
