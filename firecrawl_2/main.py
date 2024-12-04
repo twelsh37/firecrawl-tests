@@ -45,7 +45,7 @@ def crawl_url(url, params=None):
 
 
 def main():
-    base_url = "https://www.theaiaa.com/"
+    base_url = "https://books.toscrape.com/"
     crawl_result = crawl_url(url=base_url)
 
     # Check if we got an error message string instead of the usual dictionary

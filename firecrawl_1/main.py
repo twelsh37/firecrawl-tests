@@ -18,7 +18,7 @@ app = FirecrawlApp(
 
 # Crawl a website:
 crawl_status = app.crawl_url(
-  'https://www.theaiaa.com', 
+  'https://books.toscrape.com/ ', 
   params={
     'limit': 3, 
     'scrapeOptions': {'formats': ['markdown', 'html']}
