@@ -1,4 +1,4 @@
-# Firecrawl Tests on a self-hostedLocal Installation
+# Firecrawl Tests on a self-hosted Local Installation
 
 ## Introduction
 This is a test of firecrawl using a local installation hosted in Docker
