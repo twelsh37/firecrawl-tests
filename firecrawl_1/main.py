@@ -31,4 +31,4 @@ crawl_status = app.crawl_url(
 )
 
 # Output the crawl status
-print('Crawl status: ',crawl_status['status'])
+print(f"Crawl status: {crawl_status['status']}")

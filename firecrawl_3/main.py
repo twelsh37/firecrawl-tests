@@ -1,5 +1,4 @@
-# Getting a bit fancier - Using a function
-# Creating a function to do our crawl and specifying paramaters
+# Ensuring we do not re read a page that has already been read
 
 # We import warnings before anything else as this allows us to filter out
 # UserWarning: Field name 'schema' in "FirecrawlApp.ExtractParams" which
@@ -23,7 +22,6 @@ load_dotenv()
 app = FirecrawlApp(
     api_key=os.getenv("FIRECRAWL_API_KEY"), api_url="http://localhost:3002"
 )
-
 
 # Creating a function to do our crawl and specifying paramatwers
 def crawl_url(url, params=None):
@@ -87,26 +85,18 @@ def main():
         return
 
     # Did the crawl succeed?
-    print(f"Crawl status:  {crawl_result['status']}")
-
-    # Get the keys from teh data
-    print(f"Available keys in response: {crawl_result.keys()}")
+    print("Crawl status:", crawl_result["status"])
 
     # How many pages did we get?
-    print(f"Total pages crawled: {crawl_result['total']}")
+    print("Total pages crawled:", crawl_result["total"])
 
-    # Display token usage information
-    if "creditsUsed" in crawl_result:
-        print(f"\nToken Usage Information:")
-        token_usage = crawl_result["creditsUsed"]
-        print(f"Total tokens used: {token_usage}")
 
     # Display the extracted content.
     # This is the markdown that is returned
     # NOTE: This returns two pages of the same data. Why?
     # We will look at that next
     if "data" in crawl_result:
-        print(f"\nExtracted Content:")
+        print("\nExtracted Content:")
         # Iterate over the pages
         for page_number, page_data in enumerate(crawl_result["data"], 1):
             print(f"\nPage {page_number}:")
