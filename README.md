@@ -86,4 +86,4 @@ success id                                   url
 ```
 
 If you have got to this point you have a functioning Docker install of Firecrawl.
-You can now try any of the esamples in the firecrawl_x folders
+You can now try any of the examples in the firecrawl_x folders
