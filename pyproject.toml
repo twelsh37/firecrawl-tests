@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "firecrawl-tests"
+version = "0.1.0"
+description = ""
+authors = ["twelsh37 <twelsh37@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+firecrawl = "^1.6.2"
+python-dotenv = "^1.0.1"
+pydantic = "^2.10.3"
+requests = "^2.32.3"
+black = "^24.10.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
