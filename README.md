@@ -105,7 +105,7 @@ You can now try any of the examples in the firecrawl_x folders
 
 ## Web Scraping vs Web Crawling: Understanding the Key Differences
 ### What’s the Difference?
-#### This section was taken from Bex Tuychiev's [Mastering Firecrawl's Crawl Endpoint: A Complete Web Scraping Guide](https://www.firecrawl.dev/blog/mastering-the-crawl-endpoint-in-firecrawl)
+### This section was taken from Bex Tuychiev's [Mastering Firecrawl's Crawl Endpoint: A Complete Web Scraping Guide](https://www.firecrawl.dev/blog/mastering-the-crawl-endpoint-in-firecrawl)
 Web scraping refers to extracting specific data from individual web pages like a Wikipedia article or a technical tutorial. It is primarily used when you need specific information from pages with known URLs.
 
 Web crawling, on the other hand, involves systematically browsing and discovering web pages by following links. It focuses on website navigation and URL discovery.
