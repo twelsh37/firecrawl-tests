@@ -87,7 +87,7 @@ success id                                   url
 
 ## A bit about Firecrawls Scrape and Crawl functionality
 ### What Is Firecrawl’s /scrape Endpoint? The Short Answer
-#### #### This section was taken from Bex Tuychiev's [How to Use Firecrawl's Scrape API: Complete Web Scraping Tutorial](https://www.firecrawl.dev/blog/mastering-firecrawl-scrape-endpoint)
+#### *This section was taken from Bex Tuychiev's ["How to Use Firecrawl's Scrape API: Complete Web Scraping Tutorial"](https://www.firecrawl.dev/blog/mastering-firecrawl-scrape-endpoint)*
 The /scrape endpoint is Firecrawl’s core web scraping API that enables automated extraction of content from any webpage. It handles common web scraping challenges like:
 
     * JavaScript rendering - Executes JavaScript to capture dynamically loaded content
@@ -105,7 +105,7 @@ You can now try any of the examples in the firecrawl_x folders
 
 ## Web Scraping vs Web Crawling: Understanding the Key Differences
 ### What’s the Difference?
-### This section was taken from Bex Tuychiev's [Mastering Firecrawl's Crawl Endpoint: A Complete Web Scraping Guide](https://www.firecrawl.dev/blog/mastering-the-crawl-endpoint-in-firecrawl)
+#### *This section was taken from Bex Tuychiev's ["Mastering Firecrawl's Crawl Endpoint: A Complete Web Scraping Guide"](https://www.firecrawl.dev/blog/mastering-the-crawl-endpoint-in-firecrawl)*
 Web scraping refers to extracting specific data from individual web pages like a Wikipedia article or a technical tutorial. It is primarily used when you need specific information from pages with known URLs.
 
 Web crawling, on the other hand, involves systematically browsing and discovering web pages by following links. It focuses on website navigation and URL discovery.
